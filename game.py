@@ -17,7 +17,15 @@ SPAWNS = [(200, 330), (600, 330), (100, 210), (700, 210), (150, 450), (650, 450)
 
 def bubble_tint(bubble):
     """Return an (r, g, b) colour for a bubble, or None for the default."""
-    pass
+    if bubble.enemy is None:
+        return None
+
+    if bubble.life > 5:
+        return (180, 240, 255)
+    elif bubble.life > 2:
+        return (255, 220, 120)
+    else:
+        return (255, 100, 100)
 
 
 def on_fruit_collected(fruit):

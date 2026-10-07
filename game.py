@@ -43,7 +43,7 @@ def on_fruit_collected(fruit):
 
 def bonus_life_threshold():
     """Return a score value at which the player earns an extra life, or None to disable bonus lives."""
-    pass
+    return 5000
 
 
 class Body:
@@ -147,6 +147,7 @@ class Bubble:
             self.vel.y = -70
 
         self.pos += self.vel * dt
+
         self.pos.x = max(
             self.radius,
             min(WIDTH - self.radius, self.pos.x)
